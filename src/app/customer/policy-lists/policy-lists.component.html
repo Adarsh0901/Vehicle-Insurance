@@ -1,0 +1,48 @@
+<section>
+    <div *ngIf="customerId==''; then hideData else showData"></div>
+
+    <!--  -->
+    <ng-template #showData>
+        <div class="mx-5 pt-4">
+            <h4 class="large-headings">Policies List : {{policyList[0].customerId}}</h4>
+            <hr />
+        </div>
+        <div class="d-flex justify-content-center container">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Sr.</th>
+                        <th scope="col">Policy number</th>
+                        <th scope="col">Policy provider</th>
+                        <th scope="col">Policy type</th>
+                        <th scope="col">Policy premium date</th>
+                        <th scope="col">Policy amount</th>
+                        <th scope="col">check</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let policy of policyList, let i = index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{policy.insuranceDetail.policyNumber}}</td>
+                        <td>{{policy.insuranceDetail.policyProvider}}</td>
+                        <td>{{policy.insuranceDetail.policyType}}</td>
+                        <td>{{policy.insuranceDetail.policyValidPeriod}}</td>
+                        <td>{{policy.insuranceDetail.policyPremiumAmount}}</td>
+                        <td><button class="btn btn-outline-dark" [routerLink]="['/customer/claim-policy',policy.insuranceDetail.policyNumber]" >claim</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </ng-template>
+
+    <!--  -->
+    <ng-template #hideData>
+        <div class="mx-5 pt-4">
+            <h4 class="large-headings">Policies List</h4>
+            <hr />
+        </div>
+        <div class="d-flex justify-content-center container">
+            <h4>Login to see the data</h4>
+        </div>
+    </ng-template>
+</section>

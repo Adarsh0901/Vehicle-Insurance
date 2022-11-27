@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" [routerLink]="['/']">Moto Insurance company</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" [routerLink]="['/']">Home</a>
+          </li>
+
+          <span *ngIf="isAgentLogin; then agentMenu"></span>
+          <ng-template #agentMenu>
+            <li class="nav-item dropdown">
+              <div class="dropdown">
+                  <a class="nav-link px-3 py-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" >
+                    Agent
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: rgb(55, 55, 55);">
+                    <a  class="nav-link px-3 py-2 " [routerLink]="['/agent/customer-lists']">Customer Lists</a>
+                    <a  class="nav-link px-3 py-2 " [routerLink]="['/agent/claimed-lists']">Claimed Lists</a>
+                  </div>
+                </div>
+            </li>
+          </ng-template>
+
+          <span *ngIf="isCustomerLogin; then customerMenu"></span>
+          <ng-template #customerMenu>
+            <li class="nav-item dropdown">
+              <div class="dropdown">
+                  <a class="nav-link px-3 py-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" >
+                    Customer
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: rgb(55, 55, 55);">
+                    <a  class="nav-link px-3 py-2 " [routerLink]="['/customer/buy-policy']">Buy policy</a>
+                    <a  class="nav-link px-3 py-2 " [routerLink]="['/customer/view-policies']">View Policies</a>
+                    <a  class="nav-link px-3 py-2 " [routerLink]="['/customer/claimed-lists']">Claim lists</a>
+                  </div>
+                </div>
+            </li>
+          </ng-template>
+          
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" [routerLink]="['/aboutus']">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" [routerLink]="['/contactus']">Contact us</a>
+          </li>
+          <span *ngIf="isLogin; then logout else login"></span>
+          <ng-template #login>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" [routerLink]="['/login']">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" [routerLink]="['/agent/register']">Agent Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" [routerLink]="['/customer/register']">Customer Register</a>
+            </li>
+          </ng-template>
+          <ng-template #logout>
+            <li  class="nav-link px-3 py-2 " (click)="logoutHandler()" >Logout</li>
+          </ng-template>
+        </ul>
+      </div>
+      <span class="navbar-text">
+        <span *ngIf="isCustomerLogin">Welcome {{customerName}}</span>
+        <span *ngIf="isAgentLogin">Welcome {{agentName}}</span>
+      </span>
+    </div>
+  </nav>

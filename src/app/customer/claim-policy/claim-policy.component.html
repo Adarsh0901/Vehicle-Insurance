@@ -1,0 +1,95 @@
+<section>
+    <div class="mx-5 pt-4">
+        <h4 class="large-headings">Claim policy: {{policyNumber}}</h4>
+        <hr />
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                Policy Detail
+            </div>
+            <div class="card-body">
+                <div class="row my-2">
+                    <div class="col-md-5"><b>Policy Number:</b></div>
+                    <div class="col-md-7">{{policyDetail[0].insuranceDetail.policyNumber}}</div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-md-5"><b>Policy Provider:</b></div>
+                    <div class="col-md-7">{{policyDetail[0].insuranceDetail.policyProvider}}</div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-md-5"><b>Policy Type:</b></div>
+                    <div class="col-md-7">{{policyDetail[0].insuranceDetail.policyType}}</div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-md-5"><b>Policy Purchase:</b></div>
+                    <div class="col-md-7">{{policyDetail[0].insuranceDetail.policyPurchaseDate}}</div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-md-5"><b>Policy Valid date:</b></div>
+                    <div class="col-md-7">{{policyDetail[0].insuranceDetail.policyValidPeriod}}</div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-md-5"><b>Premium Amount:</b></div>
+                    <div class="col-md-7">{{policyDetail[0].insuranceDetail.policyPremiumAmount}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card my-3">
+            <div class="card-header">
+                Accident Detail Form
+            </div>
+            <div class="card-body m-3">
+                <form #claimPolicy="ngForm" (ngSubmit)="onSubmitHandler(claimPolicy.value)" class="form-container">   
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-5 "><label class="form-label">Accident Place:</label></div>
+                                <div class="col-md-7 "><input required type="text" name="accidentPlace" [(ngModel)]="accidentPlace" /></div>
+                            </div>    
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-5 "><label class="form-label">Accident Date:</label></div>
+                                <div class="col-md-7 "><input required type="date" name="accidentDate" [(ngModel)]="accidentDate" /></div>
+                            </div>    
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-5 "><label class="form-label">Accident Detail:</label></div>
+                                <div class="col-md-7 "><textarea required type="text" name="accidentDetail" [(ngModel)]="accidentDetail" ></textarea></div>
+                            </div>    
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-5 "><label class="form-label">Accident Photo:</label></div>
+                                <div class="col-md-7 "><input required type="file" name="accidentPhoto" (change)="onSelectedFiles($event)" /></div>
+                            </div>    
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-5 "><label class="form-label">Driver Name:</label></div>
+                                <div class="col-md-7 "><input required type="text" name="driverName" [(ngModel)]="driverName" /></div>
+                            </div>    
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-5 "><label class="form-label">Driver Licence number:</label></div>
+                                <div class="col-md-7 "><input required type="text" name="accidentLicence" [(ngModel)]="driverLicence" /></div>
+                            </div>    
+                        </div>
+                    </div>
+
+                    <div class="container my-3 row">
+                        <div class="col-md-12  d-flex justify-content-center">
+                            <button type="reset" class="btn btn-outline-primary p-2 m-2">Reset</button>
+                            <button type="submit" [disabled]="claimPolicy.invalid" class="btn btn-outline-primary p-2 m-2" >Claim</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

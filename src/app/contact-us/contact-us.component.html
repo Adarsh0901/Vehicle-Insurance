@@ -1,0 +1,58 @@
+<section>
+    <div class="mx-5 pt-4">
+        <h4 class="large-headings">Contact Us</h4>
+        <hr />
+
+        <!-- Form To take input from the user -->
+        <div class="d-flex justify-content-center">
+            <form #contactUs="ngForm" (ngSubmit)="onSubmitHandler(contactUs.value)" (ngReset)="onSubmitHandler(contactUs.value)" class="form-container">
+                <!-- Agent Id field -->
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="row">
+                            <div class="col-md-2 "><label class="form-label">Name</label></div>
+                            <div class="col-md-5 "><input required type="text" name="name" [(ngModel)]="personName" /></div>
+                        </div>    
+                    </div> 
+                    <div class=" col-md-5 ">
+                        <p class="error-message"></p>
+                    </div>
+                </div>
+                <!-- Email field -->
+                <div class="row">
+                    <div class="col-md-7 ">
+                        <div class="row">
+                            <div class="col-md-2 co-sm-12"><label class="form-label">Email</label></div>
+                            <div class="col-md-5 "> <input required type="email" name="email" [(ngModel)]="personEmail" /></div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 ">
+                        <p class="error-message"></p>
+                    </div>
+                </div>
+
+                <!-- Pass -->
+                <div class="row">
+                    <div class="col-md-7 ">
+                        <div class="row">
+                            <div class="col-md-2 co-sm-12"><label class="form-label">Message</label></div>
+                            <div class="col-md-5 "> <textarea required type="text" name="message" [(ngModel)]="personMessage"></textarea></div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 ">
+                        <p class="error-message"></p>
+                    </div>
+                </div>
+                
+                <!-- Button field -->
+                <div class="row">
+                    <div class="col-md-7  d-flex justify-content-center">
+                        <button type="reset" class="btn btn-outline-primary p-2 m-2">Reset</button>
+                        <button type="submit" [disabled]="contactUs.invalid" class="btn btn-outline-primary p-2 m-2">Send us</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>

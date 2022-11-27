@@ -1,0 +1,53 @@
+<section>
+    <div class="mx-5 pt-4">
+        <h4 class="large-headings">Claimed Lists</h4>
+        <hr />
+    </div>
+
+    <div class="d-flex justify-content-center container">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Sr.</th>
+                    <th scope="col">Claim Id</th>
+                    <th scope="col">Policy Number</th>
+                    <th scope="col">Accident Date</th>
+                    <th scope="col">Accident Details</th>
+                    <th scope="col">Accident Img</th>
+                    <th scope="col">Claim Status</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let claims of claimList, let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{claims.claimId}}</td>
+                    <td>{{claims.policyNumber}}</td>
+                    <td>{{claims.accidentDate}}</td>
+                    <td>{{claims.accidentdetail}}</td>
+                    <td *ngIf="claims.accidentPhoto;then showImg else noImg"></td>
+                    <ng-template #showImg><td><img src={{claims.accidentPhoto}} height="100px" width="100px" /></td></ng-template>
+                    <ng-template #noImg><td></td></ng-template>
+                    <td>{{claims.claimStatus}}</td>
+                    <td>
+                        <span *ngIf="claims.claimStatus == 'New'; then actionButtons"></span>
+                        <ng-template #actionButtons>
+                            <button class="btn btn-outline-success mx-1" (click)="onApproveHandler(claims.claimId)">Approve</button>
+                            <button class="btn btn-outline-danger" (click)="onDeniedHandler(claims.claimId)">Deny</button>
+                        </ng-template>
+
+                        <span *ngIf="claims.claimStatus == 'Approved'; then approvedStatus"></span>
+                        <ng-template #approvedStatus>
+                            <button class="btn btn-success">Approved</button>
+                        </ng-template>
+
+                        <span *ngIf="claims.claimStatus == 'Denied'; then deniedStatus"></span>
+                        <ng-template #deniedStatus>
+                            <button class="btn btn-danger">Denied</button>
+                        </ng-template>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

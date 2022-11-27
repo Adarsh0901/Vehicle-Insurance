@@ -1,0 +1,197 @@
+<section>
+    <div class="mx-5 pt-4">
+        <h4 class="large-headings">Buy Policy</h4>
+        <hr />
+    
+    <div class="container row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Owner Detail
+                </div>
+                <div class="card-body">
+                    <form #ownerDetail="ngForm"  class="form-container">   
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-5 "><label class="form-label">Owner Name:</label></div>
+                                    <div class="col-md-7 "><input required type="text" name="ownerName" [(ngModel)]="ownerName" /></div>
+                                </div>    
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <div class="row">
+                                    <div class="col-md-5 co-sm-12"><label class="form-label">Gender:</label></div>
+                                    <div class="col-md-7 ">
+                                        <select name="gender" [(ngModel)]="ownerGender">
+                                            <option>Select</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <div class="row">
+                                    <div class="col-md-5 co-sm-12"><label class="form-label">Address:</label></div>
+                                    <div class="col-md-7 ">
+                                        <input required type="text" name="licenceNumber" [(ngModel)]="ownerAddress" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card my-3">
+                <div class="card-header">
+                    Insurance Detail
+                </div>
+                <div class="card-body">
+                    <form #insuranceDetail="ngForm"  class="form-container">   
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <div class="row">
+                                    <div class="col-md-5 co-sm-12"><label class="form-label">Policy type:</label></div>
+                                    <div class="col-md-7 ">
+                                        <select name="policyType" [(ngModel)]="policyType">  
+                                            <option>Zero Depreciation</option>
+                                            <option>Third Party</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card my-3">
+                <div class="card-header">
+                    Agent Detail
+                </div>
+                <div class="card-body">
+                    <form #agentDetail="ngForm"  class="form-container">   
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <div class="row">
+                                    <div class="col-md-5 co-sm-12"><label class="form-label">Agent Id:</label></div>
+                                    <div class="col-md-7 "><input required type="text" name="agentId" [(ngModel)]="agentId" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Vehicle Detail
+                </div>
+                <div class="card-body">
+                    <form #vehicleDetail="ngForm"  class="form-container">   
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-5 "><label class="form-label">Vehicle Name:</label></div>
+                                    <div class="col-md-7 "><input required type="text" name="vehicleName"[(ngModel)]="vehicleName" /></div>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-5 "><label class="form-label">Chassis Number:</label></div>
+                                    <div class="col-md-7 "><input required type="text" name="chassisNumber"[(ngModel)]="chassisNumber" /></div>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-5 "><label class="form-label">Year of manufacture:</label></div>
+                                    <div class="col-md-7 "><input required type="text" name="yearOfManufacture"[(ngModel)]="yearOfManufacture" /></div>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-5 "><label class="form-label">Registration Number:</label></div>
+                                    <div class="col-md-7 "><input required type="text" name="registrationNumber"[(ngModel)]="registrationNumber" /></div>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-5 "><label class="form-label">Registration Place:</label></div>
+                                    <div class="col-md-7 "><input required type="text" name="registrationPlace"[(ngModel)]="registrationPlace" /></div>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-5 "><label class="form-label">Seating Capacity:</label></div>
+                                    <div class="col-md-7 "><input required type="text" name="seatingCapacity"[(ngModel)]="seatingCapacity" /></div>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <div class="row">
+                                    <div class="col-md-5 co-sm-12"><label class="form-label">Vehicle Category:</label></div>
+                                    <div class="col-md-7 ">
+                                        <select name="vehicleCategory" [(ngModel)]="vehicleCategory">
+                                            <option>Select</option>
+                                            <option>Luxury</option>
+                                            <option>Commercial</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-5 "><label class="form-label">Vehicle Valuation:</label></div>
+                                    <div class="col-md-7 "><input required type="text" name="vehicleValuation"[(ngModel)]="vehicleValuation" /></div>
+                                </div>    
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <div class="row">
+                                    <div class="col-md-5 co-sm-12"><label class="form-label">Vehicle Manufacturer:</label></div>
+                                    <div class="col-md-7 ">
+                                        <input required type="text" name="vehicleManufacturer" [(ngModel)]="vehicleManufacturer" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-3 row">
+        <div class="col-md-12  d-flex justify-content-center">
+            <button type="reset" class="btn btn-outline-primary p-2 m-2" (click)="resetHandler()" >Reset</button>
+            <button type="submit" class="btn btn-outline-primary p-2 m-2" (click)="buyEventHandler()">Buy</button>
+        </div>
+    </div>
+    </div>
+</section>

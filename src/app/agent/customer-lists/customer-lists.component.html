@@ -1,0 +1,31 @@
+<section>
+    <div class="mx-5 pt-4">
+        <h4 class="large-headings">Customer Lists</h4>
+        <hr />
+    </div>
+
+    <div class="d-flex justify-content-center container">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Sr.</th>
+                    <th scope="col">Customer Id</th>
+                    <th scope="col">Policy Number</th>
+                    <th scope="col">Policy premium date</th>
+                    <th scope="col">Policy amount</th>
+                    <th scope="col">check</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let policy of customerLists">
+                    <th scope="row">{{policy.id}}</th>
+                    <td>{{policy.customerId}}</td>
+                    <td>{{policy.insuranceDetail.policyNumber}}</td>
+                    <td>{{policy.insuranceDetail.policyValidPeriod}}</td>
+                    <td>{{policy.insuranceDetail.policyPremiumAmount}}</td>
+                    <td><button class="btn btn-outline-dark" [routerLink]="['/agent/customer-detail',policy.customerId]">View</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

@@ -1,0 +1,115 @@
+<section>
+    <div class="mx-5 pt-4">
+        <h4 class="large-headings">Customer Detail : {{customerDetails[0].name}}</h4>
+        <hr />
+
+        <div class="container row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                      <b>Owner Detail</b>
+                    </div>
+                    <div class="card-body">
+                        <div class="row my-2">
+                            <div class="col-md-5"><b>Name:</b></div>
+                            <div class="col-md-7">{{customerDetails[0].name}}</div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5"><b>Gender:</b></div>
+                            <div class="col-md-7">{{customerDetails[0].gender}}</div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5"><b>Address:</b></div>
+                            <div class="col-md-7">{{customerDetails[0].address}}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card my-2">
+                    <div class="card-header">
+                        <b>Insurance Detail</b>
+                    </div>
+                    <div class="card-body">
+                        <div class="row my-2">
+                            <div class="col-md-5"><b>Policy Number:</b></div>
+                            <div class="col-md-7">{{insuranceDetail[0].insuranceDetail.policyNumber}}</div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5"><b>Policy Provider:</b></div>
+                            <div class="col-md-7">{{insuranceDetail[0].insuranceDetail.policyProvider}}</div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5"><b>Policy Type:</b></div>
+                            <div class="col-md-7">{{insuranceDetail[0].insuranceDetail.policyType}}</div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5"><b>Policy Valid date:</b></div>
+                            <div class="col-md-7">{{insuranceDetail[0].insuranceDetail.policyValidPeriod}}</div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5"><b>Policy Purchase:</b></div>
+                            <div class="col-md-7">{{insuranceDetail[0].insuranceDetail.policyPurchaseDate}}</div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5"><b>Premium Amount:</b></div>
+                            <div class="col-md-7">{{insuranceDetail[0].insuranceDetail.policyPremiumAmount}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <b>Vehicle Detail</b>
+                    </div>
+                    <div class="card-body">
+                        <div class="row my-2">
+                            <div class="col-md-5"><b>Name:</b></div>
+                            <div class="col-md-7">{{insuranceDetail[0].vehicleDetail.vehicleName}}</div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5"><b>Chassis Number:</b></div>
+                            <div class="col-md-7">{{insuranceDetail[0].vehicleDetail.chassisNumber}}</div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5"><b>Year of manufacture:</b></div>
+                            <div class="col-md-7">{{insuranceDetail[0].vehicleDetail.yearOfManufacture}}</div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5"><b>Registration Number:</b></div>
+                            <div class="col-md-7">{{insuranceDetail[0].vehicleDetail.registrationNumber}}</div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5"><b>Registration Place:</b></div>
+                            <div class="col-md-7">{{insuranceDetail[0].vehicleDetail.registrationPlace}}</div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5"><b>Seating Capacity:</b></div>
+                            <div class="col-md-7">{{insuranceDetail[0].vehicleDetail.seatingCapacity}}</div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5"><b>Vehicle Category:</b></div>
+                            <div class="col-md-7">{{insuranceDetail[0].vehicleDetail.vehicleCategory}}</div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5"><b>Vehicle Valuation:</b></div>
+                            <div class="col-md-7">{{insuranceDetail[0].vehicleDetail.vehicleValuation}}</div>
+                        </div>
+                        <div class="row my-2">
+                            <div class="col-md-5"><b>Manufacturer:</b></div>
+                            <div class="col-md-7">{{insuranceDetail[0].vehicleDetail.vehicleManufacturer}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12  d-flex justify-content-center">
+                <button type="submit" class="btn btn-outline-dark p-2 m-4" [routerLink]="['/agent/customer-lists']">Back</button>
+            </div>
+        </div>
+    </div>
+
+
+</section>

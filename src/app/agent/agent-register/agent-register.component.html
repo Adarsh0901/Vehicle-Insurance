@@ -1,0 +1,74 @@
+<section>
+    <div class="mx-5 pt-4">
+        <h4 class="large-headings">Become an agent with Moto insurance</h4>
+        <hr />
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <form #agentRegister="ngForm" (ngSubmit)="onSubmitHandler(agentRegister.value)" (ngReset)="onResetHandler(agentRegister.value)" class="form-container">
+
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="row">
+                        <div class="col-md-2 "><label class="form-label">Name</label></div>
+                        <div class="col-md-5 "><input required type="text" name="name" [(ngModel)]="agentName" /></div>
+                    </div>    
+                </div> 
+                <div class=" col-md-5 ">
+                    <p class="error-message"></p>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-md-7 ">
+                    <div class="row">
+                        <div class="col-md-2 co-sm-12"><label class="form-label">Mobile Number</label></div>
+                        <div class="col-md-5 "> <input required type="number"  name="mobileNumber" [(ngModel)]="agentMobileNumber" /></div>
+                    </div>
+                </div>
+                <div class="col-md-5 ">
+                    <p class="error-message"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-7 ">
+                    <div class="row">
+                        <div class="col-md-2 co-sm-12"><label class="form-label">Email</label></div>
+                        <div class="col-md-5 "> <input required type="email"  name="email" [(ngModel)]="agentEmailId" /></div>
+                    </div>
+                </div>
+                <div class="col-md-5 ">
+                    <p class="error-message"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-7 ">
+                    <div class="row">
+                        <div class="col-md-2 co-sm-12"><label class="form-label">Address</label></div>
+                        <div class="col-md-5 "> <input required type="text"  name="address" [(ngModel)]="agentAddress" /></div>
+                    </div>
+                </div>
+                <div class="col-md-5 ">
+                    <p class="error-message"></p>
+                </div>
+            </div>
+            
+            <!-- Button field -->
+            <div class="row">
+                <div class="col-md-7  d-flex justify-content-center">
+                    <button type="reset" class="btn btn-outline-primary p-2 m-2">Reset</button>
+                    <button type="submit" [disabled]="agentRegister.invalid" class="btn btn-outline-primary p-2 m-2">Register</button>
+                </div>
+            </div>
+
+            <hr class="m-3" />
+            <div class="row">
+                <div class="col-md-7 ">
+                    <p class="d-flex justify-content-center">Already an agent? <a class="ml-2" [routerLink]="['/login']" >Login</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
